@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+selected = STDIN.read
+
+print case selected
+	 when /"#\{(\S+)\}"/ then $1
+	 else '"#{' + selected + '}"'
+	 end unless selected.empty?</string>
+	<key>fallbackInput</key>
+	<string>none</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@"</string>
+	<key>name</key>
+	<string>Toggle Interpolate</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>A766A2E0-CD8E-4C55-ADB9-7873242B25A4</string>
+</dict>
+</plist>
